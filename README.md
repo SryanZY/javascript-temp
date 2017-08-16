@@ -72,3 +72,43 @@ isFinite(-1) // true
 isFinite(true) // true
 isFinite(NaN) // false  
 ```   
+
+******   
+******   
+## 字符串   
+
+如果要在单引号内部使用单引号（双引号内部使用双引号），则需要在前面进行转义   
+```  
+'he is a brand new boy\'template\'!'  
+```   
+
+如果需要分成多行写，则在每行的尾部使用反斜杠   
+```  
+var longString = "Long \
+long \
+long \
+string"; 
+// "Long long long string"  
+```   
+
+***转义***   
+```   
+\0 null（\u0000）
+\b 后退键（\u0008）
+\f 换页符（\u000C）
+\n 换行符（\u000A）
+\r 回车键（\u000D）
+\t 制表符（\u0009）
+\v 垂直制表符（\u000B）
+\' 单引号（\u0027）
+\" 双引号（\u0022）  
+```   
+
+### base64转码  
+bota()  -字符串或二进制值转为Base64编码   
+atob()  -Base64格式的编码转回原来的格式  
+```  
+var string = 'Hello World!';
+btoa(string) // "SGVsbG8gV29ybGQh"
+atob('SGVsbG8gV29ybGQh') // "Hello World!"  
+```   
