@@ -49,7 +49,7 @@ NaN与任何数运算（包括本身）都是NaN，可以通过isNaN来判断
 ```   
 isNaN(NaN)  // true  
 ```   
-**NaN只对数值有效，输入其他的会先转换为数字，因此返回true的不一定就是NaN，可以通过函数判断**   
+**isNaN只对数值有效，输入其他的会先转换为数字，因此返回true的不一定就是NaN，可以通过函数判断**   
 ```  
 function tmpIsNaN(val) {
     return typeof(val) === 'number' && isNaN(val);
