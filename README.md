@@ -36,7 +36,8 @@ Object.is(NaN, NaN) // true
 ```   
 ***  
 
-#### 关于NaN和infinite   
+#### ***关于NaN和infinity***   
+
 ```   
 typeof NaN  // Number  
 ```   
@@ -49,4 +50,21 @@ isNaN(NaN)  // true
 function tmpIsNaN(val) {
     return typeof(val) === 'number' && isNaN(val);
 }  
+```   
+   
+
+0 / 0 结果是NaN， 而非零值除以0结果是infinity， 1  / 0: infinity   
+infinity与NaN比较总是返回false，
+```  
+Infinity > NaN // false
+-Infinity > NaN // false
+-Infinity < NaN // false  
+```   
+
+isFinity返回一个布尔值，用来判断某个值是不是正常数值，而不是判断infinity  
+```   
+isFinite(Infinity) // false
+isFinite(-1) // true
+isFinite(true) // true
+isFinite(NaN) // false  
 ```   
