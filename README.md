@@ -127,8 +127,15 @@ eval('({foo: 123})') // {foo: 123}，解释为语句
 ```   
 
 
-关于delete命令：   
+*关于delete命令*：   
 > 用于删除对象的属性且删除后返回true，删除一个不存在的属性不报错而且还会返回true；   
 如果对象的enumberable属性设置为false（Object.defineProperty），则该属性  
 不能删除；delete只能删除对象本身的属性，不能删除继承来的属性；最后，delete不可删除通过var等   
-声明来的变量，只能删除属性。   
+声明来的变量，只能删除属性。    
+
+
+*关于for in循环*：   
+1. 遍历所有可枚举的属性，即configurable为true的属性  
+2. 会遍历继承来的属性   
+
+
