@@ -1,7 +1,8 @@
 # javascript-temp
 js学习笔记
   
-## > 数据类型  
+## ***数据类型***  
+
 typeof null = object, null == undefined(true)  
 空字符在布尔值上表现为false，然而空[] 或 ｛｝表现为true  
 ```  
@@ -75,7 +76,7 @@ isFinite(NaN) // false
 
 ******   
 ******   
-## 字符串   
+## ***字符串***   
 
 如果要在单引号内部使用单引号（双引号内部使用双引号），则需要在前面进行转义   
 ```  
@@ -112,3 +113,6 @@ var string = 'Hello World!';
 btoa(string) // "SGVsbG8gV29ybGQh"
 atob('SGVsbG8gV29ybGQh') // "Hello World!"  
 ```   
+***   
+***   
+## ***对象***  
