@@ -216,8 +216,10 @@ var a = [1, 2, 3];
 delete a[1];
 
 a[1] // undefined
-a.length // 3   
-```   
+a.length // 3    
+
+```   
+
 注：**空位不同于undefined，使用Object.keys、for in以及for each等方法   
 遍历数组时空位会被跳过但undefined不会**   
 ```   
