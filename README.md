@@ -193,3 +193,50 @@ elts instanceof Array // false
 ```   
 Array.prototype.slice.call(arraylike) 或者 Array.from(arraylike) ES6实现   
 ```   
+2、in 运算符  
+用来判断某个键名是否存在。  
+```  
+var arr = [ 'a', 'b', 'c' ];
+2 in arr  // true
+'2' in arr // true
+4 in arr // false   
+```   
+**如果数组的某个位置是空位则返回false**  
+```  
+var arr = [];
+arr[100] = 'a';
+
+100 in arr // true
+1 in arr // false,数组只有一个成员arr[100],所以其他的均是false  
+```   
+3、数组空位   
+使用delete删除数组成员会形成空位但不会影响length属性。
+```   
+var a = [1, 2, 3];
+delete a[1];
+
+a[1] // undefined
+a.length // 3   
+```   
+注：**空位不同于undefined，使用Object.keys、for in以及for each等方法   
+遍历数组时空位会被跳过但undefined不会**   
+```   
+/*遍历空位时*/
+var a = [, , ,];
+
+a.forEach(function (x, i) {
+  console.log(i + '. ' + x);
+})
+// 不产生任何输出  
+
+/*遍历undefined时*/
+var a = [undefined, undefined, undefined];
+
+a.forEach(function (x, i) {
+  console.log(i + '. ' + x);
+});
+// 0. undefined
+// 1. undefined
+// 2. undefined   
+```   
+
