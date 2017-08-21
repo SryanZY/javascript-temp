@@ -140,7 +140,7 @@ eval('({foo: 123})') // {foo: 123}，解释为语句
 
 ***   
 ***   
-## 数组   
+## ***数组***   
 1、length属性   
 将数组清空的方法之一就是将length值变为0.   
 因为数组是对象的一种（引用数据类型），可以扩展属性但不会影响length  
@@ -154,3 +154,42 @@ a[2.1] = 'abc';
 a.length // 0   
 ```   
 
+### 类数组对象（长得很像数组，也具有length属性但不可使用数组的方法）  
+```   
+var obj = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3
+};
+
+obj[0] // 'a'
+obj[2] // 'c'
+obj.length // 3
+obj.push('d') // TypeError: obj.push is not a function   
+```   
+
+典型的类数组对象有arguments参数、DOM元素集以及字符串：
+```   
+// arguments对象
+function args() { return arguments }
+var arrayLike = args('a', 'b');
+arrayLike[0] // 'a'
+arrayLike.length // 2
+arrayLike instanceof Array // false
+
+// DOM元素集
+var elts = document.getElementsByTagName('h3');
+elts.length // 3
+elts instanceof Array // false
+
+// 字符串
+'abc'[1] // 'b'
+'abc'.length // 3
+'abc' instanceof Array // false   
+```   
+
+*可以使用数组的slice方法将类数组对象变为真正的数组*
+```   
+Array.prototype.slice.call(arraylike) 或者 Array.from(arraylike) ES6实现   
+```   
