@@ -141,7 +141,7 @@ eval('({foo: 123})') // {foo: 123}，解释为语句
 ***   
 ***   
 ## ***数组***   
-1、length属性   
+> 1、length属性   
 将数组清空的方法之一就是将length值变为0.   
 因为数组是对象的一种（引用数据类型），可以扩展属性但不会影响length  
 ```   
@@ -193,7 +193,7 @@ elts instanceof Array // false
 ```   
 Array.prototype.slice.call(arraylike) 或者 Array.from(arraylike) ES6实现   
 ```   
-2、in 运算符  
+> 2、in 运算符  
 用来判断某个键名是否存在。  
 ```  
 var arr = [ 'a', 'b', 'c' ];
@@ -209,7 +209,7 @@ arr[100] = 'a';
 100 in arr // true
 1 in arr // false,数组只有一个成员arr[100],所以其他的均是false  
 ```   
-3、数组空位   
+> 3、数组空位   
 使用delete删除数组成员会形成空位但不会影响length属性。
 ```   
 var a = [1, 2, 3];
