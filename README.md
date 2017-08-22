@@ -252,7 +252,8 @@ a.forEach(function (x, i) {
 f();
 var f = function (){};
 // TypeError: undefined is not a function  
-```    
+```   
+
 
 函数的toString()方法返回函数的源码：  
 ```  
