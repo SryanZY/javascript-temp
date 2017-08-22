@@ -242,3 +242,31 @@ a.forEach(function (x, i) {
 // 2. undefined   
 ```   
 
+***   
+***  
+## 函数  
+
+函数调用自身就是**递归**。   
+由于变量提升，在函数声明之前可以调用，但是通过采用赋值语句定义的函数会报错:   
+```  
+f();
+var f = function (){};
+// TypeError: undefined is not a function  
+```    
+
+函数的toString()方法返回函数的源码：  
+```  
+function f() {
+  a();
+  b();
+  c();
+}
+
+f.toString()
+// function f() {
+//  a();
+//  b();
+//  c();
+// }  
+```   
+ 
